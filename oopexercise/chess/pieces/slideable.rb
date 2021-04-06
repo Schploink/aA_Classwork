@@ -4,10 +4,11 @@ module Slideable
     DIAGONAL_DIRS = [[1,1], [-1,1], [1,-1], [-1,-1]]
 
     def horizontal_dirs
+        HORIZONTAL_DIRS
     end
 
     def diagonal_dirs
-
+        DIAGONAL_DIRS
     end
 
     def moves
@@ -18,5 +19,7 @@ module Slideable
     end
 
     def grow_unblocked_moves_in_dir(dx, dy)
+        #rook - method takes in direction - add direction to position - return array of possible moves
+        #until hit piece of same color, edge of board, one after piece of different color
     end
 end

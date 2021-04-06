@@ -1,4 +1,4 @@
-require_relative "piece.rb"
+require_relative "pieces/piece.rb"
 
 class Board
 
@@ -12,7 +12,7 @@ class Board
         @rows.each_with_index do |row, idx|
             if idx.between?(0,1) || idx.between?(6,7)
                 row.each_with_index do |spot, idx2|
-                    @rows[idx][idx2] = Piece.new(:b, 1, [idx, idx2])
+                    @rows[idx][idx2] = Piece.new(:b, self, [idx, idx2])
                 end
             end
         end
@@ -41,6 +41,4 @@ class Board
         piece.pos = end_pos
 
     end
-    # should raise error if no piece at start pos
-    # error if piece cannot move to end_pos - if off board
 end
