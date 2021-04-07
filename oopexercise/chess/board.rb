@@ -1,5 +1,5 @@
 require_relative "pieces/piece.rb"
-require_relative "pieces/rook.rb"
+require_relative "pieces/king.rb"
 require_relative "pieces/null_piece.rb"
 
 class Board
@@ -15,7 +15,7 @@ class Board
             row.each_with_index do |spot, idx2|
                 if idx.between?(0,1) || idx.between?(6,7)
                     #CHANGED TO ALL ROOKS FOR TESTING!!!
-                    @rows[idx][idx2] = Rook.new(:b, self, [idx, idx2])
+                    @rows[idx][idx2] = King.new(:b, self, [idx, idx2])
                 else 
                     @rows[idx][idx2] = @null_piece
                 end
