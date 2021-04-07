@@ -79,9 +79,22 @@ class Cursor
   #or it will exit from the terminal process in the case of ctrl_c
   #exit a termial process use Process.exit pass it the status code 0 as an arguement
   def handle_key(key)
-    case KEYMAP
+    value = KEYMAP[key]
+    case value
+    when :return, :space
+        return @cursor_pos
+    when :up, :left, :right, :down
+        update_pos(MOVES[value])
+        return nil
+    when :ctrl_c
+        Process.exit(0)
+    end
   end
 
   def update_pos(diff)
+    x,y = @cursor_pos
+    dx, dy = diff
+
+    @cursor_pos = [x+dx, y+dy] if @board.valid_pos?([x+dx, y+dy])
   end
 end
