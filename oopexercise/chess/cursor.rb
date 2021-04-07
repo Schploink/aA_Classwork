@@ -79,12 +79,12 @@ class Cursor
   #or it will exit from the terminal process in the case of ctrl_c
   #exit a termial process use Process.exit pass it the status code 0 as an arguement
   def handle_key(key)
-    value = KEYMAP[key]
-    case value
+  
+    case key
     when :return, :space
         return @cursor_pos
     when :up, :left, :right, :down
-        update_pos(MOVES[value])
+        update_pos(MOVES[key])
         return nil
     when :ctrl_c
         Process.exit(0)

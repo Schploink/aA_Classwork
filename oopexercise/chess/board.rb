@@ -55,7 +55,7 @@ class Board
         if self[start_pos] == @null_piece
             raise "No piece there"
         end
-        if valid_pos?(end_pos)
+        if !valid_pos?(end_pos)
             raise "Where you goin"
         end
         piece = self[start_pos]
@@ -72,6 +72,6 @@ class Board
     end
 
     def valid_pos?(pos)
-        !pos[0].between?(0, 7) || !pos[1].between?(0, 7)
+        pos[0].between?(0, 7) || pos[1].between?(0, 7)
     end
 end
