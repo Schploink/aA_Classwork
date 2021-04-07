@@ -20,13 +20,11 @@ module Slideable
         potential_moves
     end
 
-    # private
+    private
     def move_dirs
     end
 
     def grow_unblocked_moves_in_dir(dx, dy)
-        #rook - method takes in direction - add direction to position - return array of possible moves
-        #until hit piece of same color, edge of board, one after piece of different color
         ox, oy = @pos
         cx, cy = ox+dx, oy+dy
         positions = []

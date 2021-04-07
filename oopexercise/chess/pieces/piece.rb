@@ -1,3 +1,5 @@
+
+
 class Piece
     attr_accessor :color
     attr_writer :pos
@@ -16,14 +18,10 @@ class Piece
     end
 
     def valid_moves
-
+        moves
     end
 
-    # def pos=(val)
-    #     @pos = val
-    # end
-
-    def Symbol
+    def symbol
 
     end
 

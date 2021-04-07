@@ -8,7 +8,7 @@ class Knight < Piece
         :kn
     end
 
-    # protected
+    protected
     def move_diffs
         KNIGHT_MOVES
     end

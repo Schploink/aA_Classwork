@@ -8,7 +8,7 @@ class King < Piece
         :K
     end
 
-    # protected
+    protected
     def move_diffs
         DIAGONAL_DIRS + HORIZONTAL_DIRS
     end

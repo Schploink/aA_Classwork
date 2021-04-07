@@ -1,6 +1,5 @@
-require_relative "pieces/piece.rb"
-require_relative "pieces/pawn.rb"
-require_relative "pieces/null_piece.rb"
+require_relative "pieces/pieces_gathered.rb"
+
 
 class Board
 
@@ -11,10 +10,16 @@ class Board
     end
 
     def populate_board
-        @rows.each_with_index do |row, idx|
-            row.each_with_index do |spot, idx2|
-                if idx.between?(0,1) || idx.between?(6,7)
+        @rows.each_with_index do |row, idx|                     #if idx 0, 0 or 7 = rook 1 or 6 = knight 2 or 5 =bishop
+            row.each_with_index do |spot, idx2|                #if queen - 0, 4 - king 0,3 idx = 1 - all white pawn
+                if idx == 1
+                    @rows[idx][idx2] = Pawn.new(:w, self, [idx, idx2])
+                elsif idx == 6
                     @rows[idx][idx2] = Pawn.new(:b, self, [idx, idx2])
+                elsif idx == 0
+                    @rows[idx][idx2] = create_back_row(:w, idx, idx2)
+                elsif idx == 7
+                    @rows[idx][idx2] = create_back_row(:b, idx, idx2)
                 else 
                     @rows[idx][idx2] = @null_piece
                 end
@@ -22,6 +27,19 @@ class Board
         end
     end
                 
+    def create_back_row(color, idx, idx2)
+        if idx2 == 0 || idx2 == 7
+            Rook.new(color, self, [idx, idx2])
+        elsif idx2 == 1 || idx2 == 6
+            Knight.new(color, self, [idx, idx2])
+        elsif idx2 == 2 || idx2 == 5
+            Bishop.new(color, self, [idx, idx2])
+        elsif idx2 == 4
+            Queen.new(color, self, [idx, idx2])
+        elsif idx2 == 3
+            King.new(color, self, [idx, idx2])
+        end
+    end
     
     def [](pos)
         row,col = pos
@@ -33,7 +51,7 @@ class Board
         @rows[row][col] = value
     end
 
-    def move_piece(start_pos, end_pos)
+    def move_piece(color, start_pos, end_pos)
         if self[start_pos] == @null_piece
             raise "No piece there"
         end
@@ -41,9 +59,15 @@ class Board
             raise "Where you goin"
         end
         piece = self[start_pos]
-        self[start_pos] = @null_piece
-        self[end_pos] = piece
-        piece.pos = end_pos
-
+        if piece.color != color
+            raise "wrong color"
+        end
+        if piece.valid_moves.include?(end_pos)
+            self[start_pos] = @null_piece
+            self[end_pos] = piece
+            piece.pos = end_pos
+        else
+            raise "piece dont do that"
+        end
     end
 end
