@@ -1,4 +1,5 @@
 require_relative "pieces/piece.rb"
+require_relative "pieces/rook.rb"
 
 class Board
 
@@ -12,7 +13,8 @@ class Board
         @rows.each_with_index do |row, idx|
             if idx.between?(0,1) || idx.between?(6,7)
                 row.each_with_index do |spot, idx2|
-                    @rows[idx][idx2] = Piece.new(:b, self, [idx, idx2])
+                    #CHANGED TO ALL ROOKS FOR TESTING!!!
+                    @rows[idx][idx2] = Rook.new(:b, self, [idx, idx2])
                 end
             end
         end

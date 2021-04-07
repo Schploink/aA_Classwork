@@ -12,6 +12,12 @@ module Slideable
     end
 
     def moves
+        potential_moves = []
+        move_dirs.each do |move_dir|
+            x,y = move_dir
+            potential_moves.concat(grow_unblocked_moves_in_dir(x,y))
+        end
+        potential_moves
     end
 
     private
@@ -21,5 +27,22 @@ module Slideable
     def grow_unblocked_moves_in_dir(dx, dy)
         #rook - method takes in direction - add direction to position - return array of possible moves
         #until hit piece of same color, edge of board, one after piece of different color
+        ox, oy = @pos
+        cx, cy = ox+dx, oy+dy
+        positions = []
+        while True
+            if @board[[cx,cy]].color == @board[[ox,oy]].color
+                break
+            elsif @board[[cx,cy]].color != @board[[ox,oy]].color && @board[[cx,cy]].color != :thevoid
+                positions << [cx,cy]
+                break
+            elsif !cx.between?(0,7) || !cy.between?(0,7)
+                break
+            end
+            positions << [cx,cy]
+            cx+= dx
+            cy+= dy
+        end
+        positions
     end
 end
