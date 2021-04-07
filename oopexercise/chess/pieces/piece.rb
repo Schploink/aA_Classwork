@@ -10,7 +10,7 @@ class Piece
     end
 
     def to_s
-
+        symbol.to_s
     end
 
     def empty?

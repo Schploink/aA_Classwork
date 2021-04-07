@@ -2,7 +2,7 @@ require_relative "pieces/pieces_gathered.rb"
 
 
 class Board
-
+    attr_reader :rows
     def initialize
         @null_piece = NullPiece.instance
         @rows = Array.new(8) {Array.new(8)}
@@ -13,13 +13,13 @@ class Board
         @rows.each_with_index do |row, idx|                     #if idx 0, 0 or 7 = rook 1 or 6 = knight 2 or 5 =bishop
             row.each_with_index do |spot, idx2|                #if queen - 0, 4 - king 0,3 idx = 1 - all white pawn
                 if idx == 1
-                    @rows[idx][idx2] = Pawn.new(:w, self, [idx, idx2])
+                    @rows[idx][idx2] = Pawn.new(:white, self, [idx, idx2])
                 elsif idx == 6
-                    @rows[idx][idx2] = Pawn.new(:b, self, [idx, idx2])
+                    @rows[idx][idx2] = Pawn.new(:black, self, [idx, idx2])
                 elsif idx == 0
-                    @rows[idx][idx2] = create_back_row(:w, idx, idx2)
+                    @rows[idx][idx2] = create_back_row(:white, idx, idx2)
                 elsif idx == 7
-                    @rows[idx][idx2] = create_back_row(:b, idx, idx2)
+                    @rows[idx][idx2] = create_back_row(:black, idx, idx2)
                 else 
                     @rows[idx][idx2] = @null_piece
                 end
