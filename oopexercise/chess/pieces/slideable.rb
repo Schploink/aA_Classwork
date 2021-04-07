@@ -20,7 +20,7 @@ module Slideable
         potential_moves
     end
 
-    private
+    # private
     def move_dirs
     end
 
@@ -30,13 +30,13 @@ module Slideable
         ox, oy = @pos
         cx, cy = ox+dx, oy+dy
         positions = []
-        while True
-            if @board[[cx,cy]].color == @board[[ox,oy]].color
+        while true
+            if !cx.between?(0,7) || !cy.between?(0,7)
+                break
+            elsif @board[[cx,cy]].color == @board[[ox,oy]].color
                 break
             elsif @board[[cx,cy]].color != @board[[ox,oy]].color && @board[[cx,cy]].color != :thevoid
                 positions << [cx,cy]
-                break
-            elsif !cx.between?(0,7) || !cy.between?(0,7)
                 break
             end
             positions << [cx,cy]

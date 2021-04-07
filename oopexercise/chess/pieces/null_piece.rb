@@ -4,7 +4,7 @@ require "Singleton"
 class NullPiece < Piece
   include Singleton
   def initialize
-    super(nil, :thevoid, nil)
+    super(:thevoid, nil, nil)
   end
 
   def moves
