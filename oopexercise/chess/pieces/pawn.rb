@@ -26,7 +26,9 @@ class Pawn < Piece
       side_attacks.each do |pos|
         x, y = pos
         cx, cy = ox+x, oy+y
-        if @board[[cx,cy]].color != @board[[ox,oy]].color && @board[[cx,cy]].color != :thevoid
+        if !cx.between?(0,7) || !cy.between?(0,7)
+          next
+        elsif @board[[cx,cy]].color != @board[[ox,oy]].color && @board[[cx,cy]].color != :thevoid
           final_moves << [cx,cy]
           next
         end 

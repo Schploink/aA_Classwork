@@ -51,7 +51,7 @@ class Board
         @rows[row][col] = value
     end
 
-    def move_piece(color, start_pos, end_pos)
+    def move_piece(start_pos, end_pos) 
         if self[start_pos] == @null_piece
             raise "No piece there"
         end
@@ -59,19 +59,35 @@ class Board
             raise "Where you goin"
         end
         piece = self[start_pos]
-        if piece.color != color
-            raise "wrong color"
-        end
-        if piece.valid_moves.include?(end_pos)
+        # if piece.color != color
+        #     raise "wrong color"
+        # end
+        # if piece.valid_moves.include?(end_pos)
             self[start_pos] = @null_piece
             self[end_pos] = piece
             piece.pos = end_pos
-        else
-            raise "piece dont do that"
-        end
+        # else
+        #     raise "piece dont do that"
+        # end
     end
 
     def valid_pos?(pos)
         pos[0].between?(0, 7) || pos[1].between?(0, 7)
+    end
+
+    def in_check?(color)
+        king_pos = []
+        @rows.each_with_index do |row, i|
+            row.each_with_index do |piece, j|
+                king_pos = piece.pos if piece.is_a?(King) && piece.color == color
+            end
+        end
+        opposing_moves = []
+         @rows.each_with_index do |row, i|
+            row.each_with_index do |piece, j|
+                opposing_moves.concat(piece.moves) if piece.color != color
+            end
+        end
+        opposing_moves.include?(king_pos)
     end
 end
