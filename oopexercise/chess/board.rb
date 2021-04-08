@@ -90,4 +90,18 @@ class Board
         end
         opposing_moves.include?(king_pos)
     end
+
+    def checkmate?(color)
+        #if they are not in check return false
+        #check valid moves of the player to see if they have any moves to make
+        #if they have at least one move then return false
+        #else if none of their valid moves are all empty return true
+
+        if in_check?(color)
+            if valid_moves.empty?
+                return true
+            end
+        end
+        return false
+    end
 end

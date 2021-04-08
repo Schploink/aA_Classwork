@@ -18,6 +18,7 @@ class Piece
     end
 
     def valid_moves
+        # if move puts you in check then it is not a valid move
         moves
     end
 
