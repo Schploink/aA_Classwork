@@ -37,7 +37,7 @@ class IntSet
   end
 
   def insert(num)
-    self[num] << num
+    self[num] << num if !include?(num)
   end
 
   def remove(num)
@@ -75,7 +75,7 @@ class ResizingIntSet
   end
 
   def include?(num)
-
+    self[num].include?(num)
   end
 
   private
