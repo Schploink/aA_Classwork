@@ -4,11 +4,18 @@ end
 
 class Array
   def hash
+    num = 0
+    self.each_with_index do |ele, i|
+      num += ele * (10 ** i)
+    end
+    num.hash
+    
   end
 end
 
 class String
   def hash
+    
   end
 end
 
