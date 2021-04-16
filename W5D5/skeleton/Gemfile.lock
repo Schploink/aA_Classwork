@@ -93,7 +93,7 @@ GEM
     mini_mime (1.1.0)
     minitest (5.14.4)
     nio4r (2.5.7)
-    nokogiri (1.11.3-x86_64-darwin)
+    nokogiri (1.11.3-x86_64-linux)
       racc (~> 1.4)
     pg (1.2.3)
     pry (0.14.1)
@@ -203,7 +203,7 @@ GEM
       nokogiri (~> 1.8)
 
 PLATFORMS
-  x86_64-darwin-19
+  x86_64-linux
 
 DEPENDENCIES
   activerecord-import
@@ -229,4 +229,4 @@ DEPENDENCIES
   web-console (>= 3.3.0)
 
 BUNDLED WITH
-   2.2.7
+   2.2.16
