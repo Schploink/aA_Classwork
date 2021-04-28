@@ -14,7 +14,7 @@ RSpec.describe User, type: :model do
     # it "check if user exist with given password" do 
       context "when password matches with given password" do
         it "should return true" do
-          expect(FacotryBot.create(:user).is_password?("123456")).to be(true)
+          expect(FactoryBot.create(:user).is_password?("123456")).to be(true)
         end
       end
       context "when password does not match with given password" do
@@ -27,12 +27,12 @@ RSpec.describe User, type: :model do
 
   describe "#reset_session_token!" do
     it "should reset session token" do
-      old_token = user.session_token
-      user.reset_session_token!
-      expect(user.session_token).to_not eq(old_token)
+      old_token = user1.session_token
+      user1.reset_session_token!
+      expect(user1.session_token).to_not eq(old_token)
     end
     it "should return new session token" do
-      expect(user.reset_session_token!).to eq(user.session_token)
+      expect(user1.reset_session_token!).to eq(user1.session_token)
     end
   end
 
