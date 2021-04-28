@@ -1,11 +1,13 @@
 require 'rails_helper'
 
 RSpec.describe UsersController, type: :controller do
-
+  # subject(:user) do 
+  #   User.create!(username: 'Harry Potter', password: '123456')
+  # end
   describe "GET #new" do
     it "should render the new user template" do
       get :new 
-      expect(response).to render_template("new")
+      expect(response).to render_template(:new)
     end
   end
 
@@ -16,9 +18,9 @@ RSpec.describe UsersController, type: :controller do
     end
     context "with invalid params" do
       it "should validate the presence of the username and password" do
-        post :create, invalid_params: { user: { username: 'Harry Potter', password: '1234'}} do
-          expect(response).to render_template("new")
-        end
+        post :create, params: invalid_params
+        expect(response).to render_template(:new)
+        expect(flash[:errors]).to be_present 
       end
     end
     context "with valid params" do
@@ -27,4 +29,19 @@ RSpec.describe UsersController, type: :controller do
       end
     end
   end 
+
+  describe "GET #index" do 
+    it "should render index input" do
+      get :index
+      expect(response).to render_template(:index)
+    end 
+  end 
+
+  describe "GET #show" do
+    it "should render show template for matching parmas_id" do 
+      get :show, params:{id: user.id}
+      expect(response).to render_template(:show)
+    end
+  end 
+
 end
