@@ -43,9 +43,9 @@ RSpec.describe User, type: :model do
   end
 
   describe "::find_by_credentials" do
-    before { user.save! }
+    before { user1.save! }
     it "should return user with correct password" do
-      expect(User.find_by_credentials("Harry Potter", "123456")).to eq(user)
+      expect(User.find_by_credentials("Capy", "123456")).to eq(user1)
     end
     it "should return nil with incorrect password" do
       expect(User.find_by_credentials("Harry Potter", "password")).to eq(nil)
