@@ -1,9 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe UsersController, type: :controller do
-  # subject(:user) do 
-  #   User.create!(username: 'Harry Potter', password: '123456')
-  # end
+  subject(:user) do 
+    User.create!(username: 'Harry Potter', password: '123456')
+  end
   describe "GET #new" do
     it "should render the new user template" do
       get :new 
