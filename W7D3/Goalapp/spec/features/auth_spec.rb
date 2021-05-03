@@ -30,14 +30,29 @@ feature 'logging in' do
   end
   scenario 'shows username on the homepage after login' do
     expect(page).to have_content 'Harry Potter'
-    
   end
 
 end
 
 feature 'logging out' do
+<<<<<<< HEAD
   scenario 'begins with a logged out state'
     
   scenario 'doesn\'t show username on the homepage after logout'
+=======
+  scenario 'begins with a logged out state' do 
+    visit new_sessions_url
+    expect(page).to have_content 'Log In'
+  end 
+
+  scenario 'doesn\'t show username on the homepage after logout' do 
+      before(:each) do
+      user = User.make(username: 'Harry Potter', password: '123456')
+      click_button 'Log In'
+      click_button 'Log out'
+      expect(page).to not_have_content 'Harry Potter'
+    end
+  end 
+>>>>>>> 410261adaa4df094d9597adccba1cf9537bdd151
 
 end
