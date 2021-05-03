@@ -37,7 +37,7 @@ end
 
 feature 'logging out' do
   scenario 'begins with a logged out state'
-
+    
   scenario 'doesn\'t show username on the homepage after logout'
 
 end
