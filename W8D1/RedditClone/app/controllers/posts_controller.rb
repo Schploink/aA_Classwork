@@ -23,7 +23,7 @@ class PostsController < ApplicationController
 
     def edit
         @post = Post.find(params[:id])
-        if @post.author_id == current_user.id
+        if @post.author_id == current_user.id #current_user.post.find_by
             render :edit
         else
             redirect_to subs_url
