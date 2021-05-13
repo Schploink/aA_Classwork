@@ -10,9 +10,9 @@
 class FollowToggle {
 
   constructor(el){
-    this.userId = el.data("user-id");
-    this.followState = el.data("initial-follow-state");
     this.$el = $(el);
+    this.userId = this.$el.data("user-id");
+    this.followState = this.$el.data("initial-follow-state");
   }
 }
 
@@ -55,9 +55,11 @@ var __webpack_exports__ = {};
   \*****************************/
 const FollowToggle = __webpack_require__(/*! ./follow_toggle */ "./frontend/follow_toggle.js")
 
-function callback($el) {
-  $el.each = new FollowToggle($el)
-}
+$(function () {
+  $("button.follow-toggle").each((i, button) => 
+    new FollowToggle(button))
+  })
+
 })();
 
 /******/ })()

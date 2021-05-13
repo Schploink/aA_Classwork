@@ -1,5 +1,6 @@
 const FollowToggle = require("./follow_toggle")
 
-function callback($el) {
-  $el.each = new FollowToggle($el)
-}
+$(function () {
+  $("button.follow-toggle").each((i, button) => 
+    new FollowToggle(button))
+  })
