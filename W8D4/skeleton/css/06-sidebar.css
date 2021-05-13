@@ -1,0 +1,16 @@
+/* PHASE 0: Sidebar */
+.profile-picture {
+  display: block;
+  margin-top: -10px;
+  position: relative;
+  border: 1px solid black;
+}
+
+.online {
+  position: absolute;
+  color: greenyellow;
+  transform: rotate(-30deg);
+  margin-top: 10px;
+  background-color:rgb(113, 55, 61);
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
+}
