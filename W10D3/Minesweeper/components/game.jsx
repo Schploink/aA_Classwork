@@ -1,4 +1,7 @@
 import React from 'react'
+import Board from './board';
+import * as Minesweeper from '../minesweeper';
+
 
 class Game extends React.Component {
 
@@ -19,9 +22,12 @@ class Game extends React.Component {
   render() {
     return (
       <div>
-        Board={this.state.board}
-        UpdateGame={this.updateGame}
+        <Board />
+        {/* Board={this.state.board}
+        UpdateGame={this.updateGame} */}
       </div>
     )
   }
 }
+
+export default Game;
