@@ -4,25 +4,30 @@ import Tile from './tile';
 class Board extends React.Component {
 
     constructor (props) {
-      super(props)    
-      
+      super(props);    
+      this.createRows = this.createRows.bind(this);
+      this.createTiles = this.createTiles.bind(this);
     }
 
     createRows () {
-      const board = this.props.board
-      board.grid.map((row, i) => {
+      const board = this.props.board;
+      return board.grid.map((row, i) => {
         return (
-          <div>{createTiles(row)}</div>
+          <div key={i} >
+              {this.createTiles(row, i)}
+          </div>
         )
       })
     }
 
-    createTiles(row) {
-      const board = this.props.board
+    createTiles(row, i) {
+      const board = this.props.board;
       return row.map((tile, j) => {
         return (
           <div>
             tile = {tile}
+            updateGame = (this.props.updateGame)
+        
           </div>
         )
       })
@@ -31,8 +36,8 @@ class Board extends React.Component {
     render() {
         return (
             <div>
-                <Tile />
                 <h1>This is the board class</h1>
+                {this.createRows()}
             </div>
         )
     }
