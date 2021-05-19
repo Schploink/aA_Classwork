@@ -3,6 +3,31 @@ import Tile from './tile';
 
 class Board extends React.Component {
 
+    constructor (props) {
+      super(props)    
+      
+    }
+
+    createRows () {
+      const board = this.props.board
+      board.grid.map((row, i) => {
+        return (
+          <div>{createTiles(row)}</div>
+        )
+      })
+    }
+
+    createTiles(row) {
+      const board = this.props.board
+      return row.map((tile, j) => {
+        return (
+          <div>
+            tile = {tile}
+          </div>
+        )
+      })
+    }
+
     render() {
         return (
             <div>
