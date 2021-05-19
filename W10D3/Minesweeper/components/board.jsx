@@ -7,13 +7,14 @@ class Board extends React.Component {
       super(props);    
       this.createRows = this.createRows.bind(this);
       this.createTiles = this.createTiles.bind(this);
+      console.log(this.props.board)
     }
 
     createRows () {
       const board = this.props.board;
       return board.grid.map((row, i) => {
         return (
-          <div key={i} >
+          <div key={i}>
               {this.createTiles(row, i)}
           </div>
         )
@@ -24,10 +25,9 @@ class Board extends React.Component {
       const board = this.props.board;
       return row.map((tile, j) => {
         return (
-          <div>
-            tile = {tile}
-            updateGame = (this.props.updateGame)
-        
+          <div key={j}>
+            <Tile tile={tile}
+            updateGame={this.props.updateGame} />                   
           </div>
         )
       })

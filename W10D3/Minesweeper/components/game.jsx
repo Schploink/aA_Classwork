@@ -22,9 +22,8 @@ class Game extends React.Component {
   render() {
     return (
       <div>
-        <Board />
-        {/* Board={this.state.board}
-        UpdateGame={this.updateGame} */}
+        <Board board={this.state.board}
+          updateGame={this.updateGame}/>
       </div>
     )
   }
