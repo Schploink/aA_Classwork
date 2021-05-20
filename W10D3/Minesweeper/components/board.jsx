@@ -14,7 +14,7 @@ class Board extends React.Component {
       const board = this.props.board;
       return board.grid.map((row, i) => {
         return (
-          <div key={i}>
+          <div key={i} className="row">
               {this.createTiles(row, i)}
           </div>
         )

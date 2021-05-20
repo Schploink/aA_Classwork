@@ -24,6 +24,7 @@ class Game extends React.Component {
       <div>
         <Board board={this.state.board}
           updateGame={this.updateGame}/>
+        
       </div>
     )
   }
