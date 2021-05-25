@@ -86,32 +86,10 @@
 /************************************************************************/
 /******/ ({
 
-/***/ "./frontend/pokedex.jsx":
-/*!******************************!*\
-  !*** ./frontend/pokedex.jsx ***!
-  \******************************/
-/*! no exports provided */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
-/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);
-
-
-document.addEventListener('DOMContentLoaded', function () {
-  var rootEl = document.getElementById('root');
-  react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Pokedex"), rootEl);
-});
-
-/***/ }),
-
-/***/ "./node_modules/object-assign/index.js":
-/*!*********************************************!*\
-  !*** ./node_modules/object-assign/index.js ***!
-  \*********************************************/
+/***/ "../../../../../node_modules/object-assign/index.js":
+/*!************************************************************!*\
+  !*** /Users/schploink/node_modules/object-assign/index.js ***!
+  \************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -210,10 +188,10 @@ module.exports = shouldUseNative() ? Object.assign : function (target, source) {
 
 /***/ }),
 
-/***/ "./node_modules/react-dom/cjs/react-dom.development.js":
-/*!*************************************************************!*\
-  !*** ./node_modules/react-dom/cjs/react-dom.development.js ***!
-  \*************************************************************/
+/***/ "../../../../../node_modules/react-dom/cjs/react-dom.development.js":
+/*!****************************************************************************!*\
+  !*** /Users/schploink/node_modules/react-dom/cjs/react-dom.development.js ***!
+  \****************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -233,10 +211,10 @@ if (true) {
   (function() {
 'use strict';
 
-var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-var _assign = __webpack_require__(/*! object-assign */ "./node_modules/object-assign/index.js");
-var Scheduler = __webpack_require__(/*! scheduler */ "./node_modules/scheduler/index.js");
-var tracing = __webpack_require__(/*! scheduler/tracing */ "./node_modules/scheduler/tracing.js");
+var React = __webpack_require__(/*! react */ "../../../../../node_modules/react/index.js");
+var _assign = __webpack_require__(/*! object-assign */ "../../../../../node_modules/object-assign/index.js");
+var Scheduler = __webpack_require__(/*! scheduler */ "../../../../../node_modules/scheduler/index.js");
+var tracing = __webpack_require__(/*! scheduler/tracing */ "../../../../../node_modules/scheduler/tracing.js");
 
 var ReactSharedInternals = React.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
 
@@ -26479,10 +26457,10 @@ exports.version = ReactVersion;
 
 /***/ }),
 
-/***/ "./node_modules/react-dom/index.js":
-/*!*****************************************!*\
-  !*** ./node_modules/react-dom/index.js ***!
-  \*****************************************/
+/***/ "../../../../../node_modules/react-dom/index.js":
+/*!********************************************************!*\
+  !*** /Users/schploink/node_modules/react-dom/index.js ***!
+  \********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -26518,16 +26496,16 @@ function checkDCE() {
 }
 
 if (false) {} else {
-  module.exports = __webpack_require__(/*! ./cjs/react-dom.development.js */ "./node_modules/react-dom/cjs/react-dom.development.js");
+  module.exports = __webpack_require__(/*! ./cjs/react-dom.development.js */ "../../../../../node_modules/react-dom/cjs/react-dom.development.js");
 }
 
 
 /***/ }),
 
-/***/ "./node_modules/react/cjs/react.development.js":
-/*!*****************************************************!*\
-  !*** ./node_modules/react/cjs/react.development.js ***!
-  \*****************************************************/
+/***/ "../../../../../node_modules/react/cjs/react.development.js":
+/*!********************************************************************!*\
+  !*** /Users/schploink/node_modules/react/cjs/react.development.js ***!
+  \********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -26547,7 +26525,7 @@ if (true) {
   (function() {
 'use strict';
 
-var _assign = __webpack_require__(/*! object-assign */ "./node_modules/object-assign/index.js");
+var _assign = __webpack_require__(/*! object-assign */ "../../../../../node_modules/object-assign/index.js");
 
 // TODO: this is special because it gets imported during build.
 var ReactVersion = '17.0.2';
@@ -28869,10 +28847,10 @@ exports.version = ReactVersion;
 
 /***/ }),
 
-/***/ "./node_modules/react/index.js":
-/*!*************************************!*\
-  !*** ./node_modules/react/index.js ***!
-  \*************************************/
+/***/ "../../../../../node_modules/react/index.js":
+/*!****************************************************!*\
+  !*** /Users/schploink/node_modules/react/index.js ***!
+  \****************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -28880,16 +28858,16 @@ exports.version = ReactVersion;
 
 
 if (false) {} else {
-  module.exports = __webpack_require__(/*! ./cjs/react.development.js */ "./node_modules/react/cjs/react.development.js");
+  module.exports = __webpack_require__(/*! ./cjs/react.development.js */ "../../../../../node_modules/react/cjs/react.development.js");
 }
 
 
 /***/ }),
 
-/***/ "./node_modules/scheduler/cjs/scheduler-tracing.development.js":
-/*!*********************************************************************!*\
-  !*** ./node_modules/scheduler/cjs/scheduler-tracing.development.js ***!
-  \*********************************************************************/
+/***/ "../../../../../node_modules/scheduler/cjs/scheduler-tracing.development.js":
+/*!************************************************************************************!*\
+  !*** /Users/schploink/node_modules/scheduler/cjs/scheduler-tracing.development.js ***!
+  \************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -29245,10 +29223,10 @@ exports.unstable_wrap = unstable_wrap;
 
 /***/ }),
 
-/***/ "./node_modules/scheduler/cjs/scheduler.development.js":
-/*!*************************************************************!*\
-  !*** ./node_modules/scheduler/cjs/scheduler.development.js ***!
-  \*************************************************************/
+/***/ "../../../../../node_modules/scheduler/cjs/scheduler.development.js":
+/*!****************************************************************************!*\
+  !*** /Users/schploink/node_modules/scheduler/cjs/scheduler.development.js ***!
+  \****************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -29903,10 +29881,10 @@ exports.unstable_wrapCallback = unstable_wrapCallback;
 
 /***/ }),
 
-/***/ "./node_modules/scheduler/index.js":
-/*!*****************************************!*\
-  !*** ./node_modules/scheduler/index.js ***!
-  \*****************************************/
+/***/ "../../../../../node_modules/scheduler/index.js":
+/*!********************************************************!*\
+  !*** /Users/schploink/node_modules/scheduler/index.js ***!
+  \********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -29914,16 +29892,16 @@ exports.unstable_wrapCallback = unstable_wrapCallback;
 
 
 if (false) {} else {
-  module.exports = __webpack_require__(/*! ./cjs/scheduler.development.js */ "./node_modules/scheduler/cjs/scheduler.development.js");
+  module.exports = __webpack_require__(/*! ./cjs/scheduler.development.js */ "../../../../../node_modules/scheduler/cjs/scheduler.development.js");
 }
 
 
 /***/ }),
 
-/***/ "./node_modules/scheduler/tracing.js":
-/*!*******************************************!*\
-  !*** ./node_modules/scheduler/tracing.js ***!
-  \*******************************************/
+/***/ "../../../../../node_modules/scheduler/tracing.js":
+/*!**********************************************************!*\
+  !*** /Users/schploink/node_modules/scheduler/tracing.js ***!
+  \**********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -29931,9 +29909,53 @@ if (false) {} else {
 
 
 if (false) {} else {
-  module.exports = __webpack_require__(/*! ./cjs/scheduler-tracing.development.js */ "./node_modules/scheduler/cjs/scheduler-tracing.development.js");
+  module.exports = __webpack_require__(/*! ./cjs/scheduler-tracing.development.js */ "../../../../../node_modules/scheduler/cjs/scheduler-tracing.development.js");
 }
 
+
+/***/ }),
+
+/***/ "./frontend/pokedex.jsx":
+/*!******************************!*\
+  !*** ./frontend/pokedex.jsx ***!
+  \******************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "../../../../../node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "../../../../../node_modules/react-dom/index.js");
+/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _util_api_util__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./util/api_util */ "./frontend/util/api_util.js");
+
+
+
+document.addEventListener('DOMContentLoaded', function () {
+  var rootEl = document.getElementById('root');
+  window.fetchAllPokemon = _util_api_util__WEBPACK_IMPORTED_MODULE_2__["fetchAllPokemon"];
+  react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Pokedex"), rootEl);
+});
+
+/***/ }),
+
+/***/ "./frontend/util/api_util.js":
+/*!***********************************!*\
+  !*** ./frontend/util/api_util.js ***!
+  \***********************************/
+/*! exports provided: fetchAllPokemon */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchAllPokemon", function() { return fetchAllPokemon; });
+var fetchAllPokemon = function fetchAllPokemon() {
+  return $.ajax({
+    url: "/api/pokemon/",
+    method: 'GET'
+  });
+};
 
 /***/ })
 
