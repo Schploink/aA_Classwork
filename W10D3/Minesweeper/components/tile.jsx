@@ -1,25 +1,36 @@
 import React from 'react';
 
 class Tile extends React.Component {
+    constructor(props) {
+        super(props);
 
-
-    bombed () {
-        if (this.bombed) {
-            return ( <div>💣</div>)
-        }
     }
 
-    explored () {
-        if (this.explored ) {
-            return ( <div></div>)
-        }
-    }
+
 
     render() {
-        const tiles = this.props.tile
+        const tile = this.props.tile
+        let label, text, count;
+        if (tile.explored) {
+            if (tile.bombed) {
+                label = "bombed";
+                text = "U+1F4A3";
+                //to change or reveal bomb
+            } else {
+                label = "explored";
+                count = tile.adjacentBombCount();
+                text = (count > 0 ? `${count}` : "");
+                //reveal number or ""
+            }
+        } else if (tile.flagged) {
+            label = "flagged";
+            text = "U+1F6A9";
+        } else {
+            label = "unexplored";
+        }
+        label = `tile ${label}`;
         return (
-
-            <div>This is the tile class</div>
+            <div className={label} >{text}</div>
         )
     }
 }

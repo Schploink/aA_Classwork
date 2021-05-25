@@ -1,0 +1,20 @@
+
+
+.tile {
+    border: 1px solid black;
+    height: 20px;
+    width: 20px;
+    background-color: red;
+    float: left;
+    text-align: center;
+    position: relative;
+}
+
+.row:after {
+    display: block;
+
+}
+
+.row {
+    width: 275px;
+}
