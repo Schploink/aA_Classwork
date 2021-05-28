@@ -6,12 +6,12 @@ class ApplicationController < ActionController::Base
     @current_user ||= User.find_by(session_token: session[:session_token])
   end
 
-  def login
-    session[:session_token] = current_user.reset_session_token!
+  def login(user)
+    session[:session_token] = user.reset_session_token!
   end
 
   def logout
-    current_user.reset_session_token!
+    current_user.reset_session_token! if logged_in?
     session[:session_token] = nil
   end
 
