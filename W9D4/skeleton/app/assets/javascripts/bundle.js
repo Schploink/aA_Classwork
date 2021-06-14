@@ -7,7 +7,7 @@
   \***********************************/
 /***/ (() => {
 
-throw new Error("Module parse failed: Unexpected token (45:0)\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\n| }\n| \n> $form.on('submit', (e) => {\n|   e.preventDefault(); // have to prevent the default form submission request\n|   const value = $inputEl.val();");
+throw new Error("Module parse failed: Unexpected token (46:0)\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\n| \n| \n> module.exports = FollowToggle");
 
 /***/ })
 

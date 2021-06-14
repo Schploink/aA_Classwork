@@ -42,15 +42,5 @@ class FollowToggle {
     });
 }
 
-$form.on('submit', (e) => {
-  e.preventDefault(); // have to prevent the default form submission request
-  const value = $inputEl.val();
-  const $newBucketListItem = $("<li
-	class= 'single-bucket' ></li > ");
-	$newBucketListItem.text(value);
-  $bucketList.append($newBucketListItem);
-  $inputEl.val(''); // will make it empty
-  $pEl.text('');
-})
 
 module.exports = FollowToggle
